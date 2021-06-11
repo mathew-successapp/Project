@@ -19,9 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix'=>'projects'], function(){
-    Route::get('/', 'ProjectsController@index');
-    Route::post('/', 'ProjectsController@store');
-    Route::get('/{id}', 'ProjectsController@show');
-    Route::patch('/{id}', 'ProjectsController@update');
-    Route::delete('/{id}', 'ProjectsController@destroy');
+    Route::get('/', 'Project\ProjectIndexController');
+    Route::post('/', 'Project\ProjectStoreController');
+    Route::get('/{id}', 'Project\ProjectShowController');
+    Route::patch('/{id}', 'Project\ProjectUpdateController');
+    Route::delete('/{id}', 'Project\ProjectDestroyController');
 });
